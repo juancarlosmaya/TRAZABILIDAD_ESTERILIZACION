@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="space-y-8">
+    <!-- About Hero Section -->
+    <div class="bg-gradient-to-r from-medical-600 to-teal-700 rounded-2xl shadow-xl overflow-hidden text-white p-8 md:p-12">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Acerca del Sistema</h1>
+            <p class="text-teal-50 font-medium text-lg opacity-90">
+                Nuestra plataforma de trazabilidad de esterilización está diseñada para garantizar la máxima seguridad, cumplimiento normativo y control de calidad en entornos médicos y de laboratorio.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Area: Mission and Tech -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Propósito -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-transform hover:-translate-y-1 duration-300">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-teal-100 p-3 rounded-lg text-teal-600">
+                    <i class="fas fa-bullseye text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Nuestro Propósito</h2>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Proveer una herramienta robusta que permita registrar, monitorear y auditar cada ciclo de esterilización. Buscamos eliminar los errores derivados del registro manual y asegurar que cada proceso cumpla con los más altos estándares internacionales de calidad.
+            </p>
+        </div>
+
+        <!-- Tecnología -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-transform hover:-translate-y-1 duration-300">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
+                    <i class="fas fa-server text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Tecnología y Seguridad</h2>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Utilizamos integración directa con dataloggers de alta precisión para garantizar que los datos de temperatura y presión sean inmutables. Toda la información es respaldada continuamente y puede ser exportada mediante certificados en PDF verificables.
+            </p>
+        </div>
+    </div>
+
+    <!-- Features Details -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="bg-gray-50 px-8 py-4 border-b border-gray-100">
+            <h3 class="font-bold text-xl text-gray-800">Garantía de Calidad</h3>
+        </div>
+        <div class="p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-teal-50 w-16 h-16 rounded-full flex items-center justify-center text-teal-600 mb-4">
+                        <i class="fas fa-project-diagram text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Trazabilidad Total</h4>
+                    <p class="text-sm text-gray-500">Seguimiento detallado desde la preparación de la carga hasta la liberación final del lote esterilizado.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 mb-4">
+                        <i class="fas fa-file-contract text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Cumplimiento Normativo</h4>
+                    <p class="text-sm text-gray-500">Arquitectura diseñada para apoyar directamente el cumplimiento de las normativas de salud vigentes.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-purple-50 w-16 h-16 rounded-full flex items-center justify-center text-purple-600 mb-4">
+                        <i class="fas fa-laptop-medical text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Accesibilidad 24/7</h4>
+                    <p class="text-sm text-gray-500">Acceda a sus reportes históricos e indicadores de rendimiento desde cualquier dispositivo autorizado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support / Footer Actions -->
+    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 py-6">
+        <p class="text-gray-600 font-medium">¿Tiene dudas sobre el funcionamiento?</p>
+        <a href="mailto:soporte@tusistema.com" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2 rounded-xl font-bold transition-all shadow-sm flex items-center">
+            <i class="fas fa-headset mr-2 text-teal-600"></i> Contactar Soporte
+        </a>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Trazabilidad Esterilización{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Config for Tailwind -->
+    {% block estilos %}
+    {% endblock %}
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            500: '#2b7a78', // Teal
+                            600: '#17252a', // Dark
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-medical-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-semibold">
+                        <i class="fas fa-chart-line mr-2"></i>Trazabilidad Esterilización
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="{% url 'url_listado' %}" class="hover:bg-medical-500 px-3 py-2 rounded-md text-sm font-medium">Revisar Ciclos</a>
+                        <a href="{% url 'url_about' %}" class="hover:bg-medical-500 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        {% if request.user.is_authenticated %}
+                            <a href="/admin/" class="hover:bg-medical-500 px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+                        {% else %}
+                            <a href="/admin/login/" class="hover:bg-medical-500 px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="bg-medical-600 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-medical-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="{% url 'url_listado' %}" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-medical-500">Revisar Ciclos</a>
+                <a href="/admin/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-medical-500">Administración</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 text-sm">
+                &copy; 2026 Trazabilidad Esterilización. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
