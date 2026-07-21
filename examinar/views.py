@@ -57,7 +57,7 @@ def listado_archivos():
     # Re-structure for the template (it expects a zip of 3 elements)
     # Actually, it's easier to change the template to use the dict list, 
     # but to maintain compatibility without major template changes:
-    registros_fechas = [ (r['pdf'], r['nombre'], r['fecha']) for r in registros_validos ]
+    #registros_fechas = [ (r['pdf'], r['nombre'], r['fecha']) for r in registros_validos ]
 
     #print(registros_fechas)
     return registros_validos
